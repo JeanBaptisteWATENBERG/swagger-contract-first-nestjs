@@ -46,9 +46,9 @@ await app.listen(3000);//Start the API
 ```
 
 `registerSwaggerContractFirstMiddleware` will first reads `options.controllers` option to fetch all your controllers.
-For each of those controllers it will find among exported members the first one that ends up with `Controller` and will assume this your controller class object.
+For each of those controllers it will find among exported members the first one that ends up with `Controller` and will assume this is your controller class object.
 
-Once done it will compute available methods on this object and build a map indexed by controller name and method name linking to `app` controller instance method (it uses `app.get(controllerName)` to fetch `app` controller instance).
+Once done it will compute available methods on this object and build a map indexed by controller and method names linking to `app` controller instance's method (it uses `app.get(controllerName)` to fetch `app` controller instance).
 
 Then this map is given to [swagger-tools router middleware](https://github.com/apigee-127/swagger-tools) that route the requests on demand.
 
