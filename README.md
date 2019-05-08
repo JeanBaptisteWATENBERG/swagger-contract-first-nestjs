@@ -17,10 +17,14 @@ swagger extensions to link with NestJS controllers.
 ## Motivation
 
 This project is motivated by the idea to use contract first approach to develop API with NestJS.
+
 As opposed to [code first approach](https://docs.nestjs.com/recipes/swagger), the goal is to let teams design their API firstly using 
-swagger and then implement it iteratively thanks to stubbing. This approach ease team communication and in most cases a better design
- of the api. It also eases `controllers` maintenance by removing all boilerplates decorators needed to generate the documentation in
-  code first approach. You can find other great reasons to adopt contract/design first approach in this [article](https://swagger.io/blog/api-design/design-first-or-code-first-api-development/)
+swagger and then implement it iteratively thanks to stubbing. 
+
+This approach ease team communication and in most cases it brings a better API design. 
+It also eases `controllers` maintenance by removing all boilerplate decorators needed to generate the documentation in code first approach. 
+
+You can find other great reasons to adopt contract/design first approach in this [article](https://swagger.io/blog/api-design/design-first-or-code-first-api-development/).
 
 ## How does it works ?
 
