@@ -1,0 +1,87 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Nestjs swagger contract first demo API
+host: localhost:4000
+basePath: /api/v1
+schemes:
+- http
+consumes:
+- application/json
+paths:
+  /hello:
+    get:
+      x-swagger-router-controller: App
+      operationId: getHello
+      produces:
+        - text/html
+      parameters:
+        - in: query
+          name: greeting
+          type: string
+      responses:
+        200:
+          description: hello world
+          schema:
+            type: string
+  /tasks:    
+    post:
+      x-swagger-router-controller: Tasks
+      operationId: createTask
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: task
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                  - TODO
+                  - DOING
+                  - DONE
+              title:
+                type: string
+            required: 
+             - title
+      responses:
+        201:
+          description: Created task
+          schema:
+            $ref: '#/definitions/Task'
+    get:
+      x-swagger-router-controller: Tasks
+      operationId: getTasks
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: status
+          type: string
+          enum:
+            - TODO
+            - DOING
+            - DONE
+      responses:
+        200:
+          description: Task list
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Task'
+          
+definitions:
+  Task:
+    properties:
+      id:
+        type: string
+      status:
+        type: string
+        enum:
+          - TODO
+          - DOING
+          - DONE
+      title:
+        type: string
