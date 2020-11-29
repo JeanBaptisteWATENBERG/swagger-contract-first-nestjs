@@ -35,8 +35,8 @@ const swagger = yaml.safeLoad(fs.readFileSync(path.join(__dirname, './swagger/sw
 const options = {
   swagger,// 2. Provide it in options
   controllers: '**/*.controller.ts',// 3. Indicate where to find your controller classes
-  useStubs: true,// You can optionnaly ask the library to stub missing controllers (usefull if some routes defined in your swagger specification are not yet implemented)
-  useSwaggerValidator: true,// You can optionnaly validates request parameters against specification to handle bad request with ease
+  useStubs: true,// You can optionally ask the library to stub missing controllers (usefull if some routes defined in your swagger specification are not yet implemented)
+  useSwaggerValidator: true,// You can optionally validates request parameters against specification to handle bad request with ease
   validateResponse: true// You can even validate responses 
 }
 
